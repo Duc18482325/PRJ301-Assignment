@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DUC/Desktop/PRJ301/Assignment/src/java/dal/AttendanceDAO.java</file>
-            <file>file:/C:/Users/DUC/Desktop/PRJ301/Assignment/web/attendance.jsp</file>
-            <file>file:/C:/Users/DUC/Desktop/PRJ301/Assignment/src/java/controller/AttendanceServlet.java</file>
-            <file>file:/C:/Users/DUC/Desktop/PRJ301/Assignment/src/java/dal/SessionDAO.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/dal/SessionDAO.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/controller/AttendanceServlet.java</file>
         </group>
     </open-files>
 </project-private>
