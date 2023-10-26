@@ -60,7 +60,7 @@
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${ses.time.tid eq s.tid and ses.date eq d}">
-                                    <a href="attendance?sub=${ses.subject.name}&room=${ses.room.roomid}&clss=${ses.group.name}&slots=${s.description}"style="color: white;
+                                    <a href="attendance?seid=${ses.seid}"style="color: white;
                                        text-decoration: none;"> 
                                         Class: ${ses.group.name} <br> Subject: ${ses.subject.name} at ${ses.room.roomid}
                                     </a>

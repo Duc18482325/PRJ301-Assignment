@@ -5,7 +5,7 @@
 package model;
 
 import java.util.Date;
-
+import java.util.ArrayList;
 /**
  *
  * @author DUC
@@ -20,6 +20,7 @@ public class Session {
     private Subject subject;
     private TimeSlot time;
     private boolean isAtt;
+    private ArrayList<Attendance> attlist = new ArrayList<>();
 
     public Session() {
     }
@@ -34,6 +35,14 @@ public class Session {
         this.subject = subject;
         this.time = time;
         this.isAtt = isAtt;
+    }
+
+    public ArrayList<Attendance> getAttlist() {
+        return attlist;
+    }
+
+    public void setAttlist(ArrayList<Attendance> attlist) {
+        this.attlist = attlist;
     }
 
     public boolean isIsAtt() {
