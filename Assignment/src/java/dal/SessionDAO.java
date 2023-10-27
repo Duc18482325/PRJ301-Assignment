@@ -74,7 +74,6 @@ public class SessionDAO extends DBContext {
     }
 
     public Session get(Session entity) {
-        ArrayList<Session> sessions = new ArrayList<>();
         try {
             String sql = "select s.seid, s.date, r.roomid, t.tid, t.description, g.gid, g.gname, su.subid, su.subname, i.iid, i.iname, s.isAtt from Session s\n"
                     + "INNER JOIN [Group] g ON g.gid = s.gid\n"
