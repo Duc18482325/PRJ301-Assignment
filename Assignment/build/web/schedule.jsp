@@ -24,7 +24,7 @@
 
             <h4>Account: ${sessionScope.info.name}</h4>
 
-            <h4><a href="server.jsp"style="text-decoration: none;">home</a></h4>
+            <h4><a href="server.jsp">home</a></h4>
             <h4>Campus:   ${sessionScope.op}</h4>
         </div>
         <form action="schedule" method="get" style="    background: orange;
@@ -40,7 +40,7 @@
         </form>
     <center>
         <h1 style="color: blue">Schedule</h1>
-        <table border="1px" width="70%" style="display: inline-block;
+        <table border="1px" width="70%" style="display: inline-table;
                background: orangered;
                color: white;
                font-weight: 600;">
@@ -75,5 +75,6 @@
             </c:forEach>
         </table>
     </center>
+            <%@include file="footer.html" %>
 </body>
 </html>

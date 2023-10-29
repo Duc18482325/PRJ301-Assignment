@@ -124,16 +124,14 @@ public class SessionDAO extends DBContext {
         try {
             connection.setAutoCommit(false);
             String sql_update_isAtt = "UPDATE [Session] SET isAtt = 1 WHERE seid = ?";
-            
-            String sql_remove_attlist = "DROP Attendance WHERE seid =?";
-            PreparedStatement st_remove_attlist = connection.prepareStatement(sql_remove_attlist);
-            st_remove_attlist.setInt(1, ses.getSeid());
-            st_remove_attlist.executeUpdate();
-            
             PreparedStatement st_update_isAtt = connection.prepareStatement(sql_update_isAtt);
             st_update_isAtt.setInt(1, ses.getSeid());
             st_update_isAtt.executeUpdate();
 
+            String sql_remove_attlist = "DELETE Attendance WHERE seid =?";
+            PreparedStatement st_remove_attlist = connection.prepareStatement(sql_remove_attlist);
+            st_remove_attlist.setInt(1, ses.getSeid());
+            st_remove_attlist.executeUpdate();
             
             for (Attendance attendance : ses.getAttlist()) {
                 String sql_insert_att = "INSERT INTO [Attendance]\n"

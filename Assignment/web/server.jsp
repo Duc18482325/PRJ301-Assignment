@@ -23,7 +23,7 @@
         
             <h4>Account: ${sessionScope.info.name}</h4>
       
-        <h4><a href="logout" style="text-decoration: none;">Log out</a></h4>
+        <h4><a href="logout">Log out</a></h4>
         <h4>Campus:   ${sessionScope.op}</h4>
         </div>
         <div>
@@ -38,9 +38,7 @@
                 <div>
                        <a href="list.jsp">List of student</a>
                 </div>
-            
-
-
         </div>
+        <%@include file="footer.html" %>
     </body>
 </html>

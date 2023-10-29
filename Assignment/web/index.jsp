@@ -96,6 +96,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </form>
             </div>
         </div>
+                            <%@include file="footer.html" %>%>
     </body>
 </html>
 

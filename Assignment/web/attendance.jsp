@@ -13,12 +13,35 @@
         <title>Attendance</title>
     </head>
     <body>
-        Class: ${requestScope.ses.group.name} <br> 
-        Subject: ${requestScope.ses.subject.name} at ${requestScope.ses.room.roomid}  <br>
-        Time Slot: ${requestScope.ses.time.description}
+        <%@include file="server.html" %>
+        <div style="display: flex;
+             justify-content: space-evenly;
+             background: orange;
+             color: white;
+             font-size: larger;
+             border-radius: 30px;">
+
+            <h4>Account: ${sessionScope.info.name}</h4>
+
+            <h4><a href="schedule?iid=-1">Schedule</a></h4>
+            <h4>Campus:   ${sessionScope.op}</h4>
+        </div>
+    <center>
+        <div style="    background: greenyellow;
+             display: inline-block;
+             font-weight: 600;
+             font-size: 20px;
+             padding: 10px;
+             border-radius: 20px;
+             margin: 20px;   ">
+            Class: ${requestScope.ses.group.name} <br> 
+            Subject: ${requestScope.ses.subject.name} at ${requestScope.ses.room.roomid}  <br>
+            Time Slot: ${requestScope.ses.time.description}
+        </div>
+
 
         <form action="attendance" method="POST">
-            <table border="1px">
+            <table border="1px" width="80%">
                 <tr>
                     <th>NO</th>
                     <th>Student</th>
@@ -46,7 +69,7 @@
 
                                    name="status${a.student.id}" value="present"/> present
                         </td>
-                        <td>
+                        <td style="display: grid;">
                             <input type="text" value="${a.description}" name="description${a.student.id}"/>
                         </td> 
                         <td>${a.datetime}</td>
@@ -59,6 +82,11 @@
             <input type="submit" value="SAVE"/>
 
         </form>
-            <h2>${sessionScope.er}</h2>
-    </body>
+    </center>
+    <h2>${sessionScope.er}</h2>
+
+
+
+    <%@include file="footer.html" %>
+</body>
 </html>
