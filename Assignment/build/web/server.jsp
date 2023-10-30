@@ -37,6 +37,7 @@
         </div>
                 <div>
                        <a href="list.jsp">List of student</a>
+                       <a href="attendance?seid=${ses.seid}">View attendance</a>
                 </div>
         </div>
         <%@include file="footer.html" %>
