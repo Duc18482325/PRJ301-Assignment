@@ -46,7 +46,7 @@ public class AccDAO extends DBContext {
 
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                Student a = new Student(rs.getInt("stuid"), rs.getString("subname"), rs.getString("code"), rs.getBoolean("gender"), rs.getDate("dob"));
+                Student a = new Student(rs.getInt("stuid"), rs.getString("stuname"), rs.getString("code"), rs.getBoolean("gender"), rs.getDate("dob"));
                 return a;
             }
 
