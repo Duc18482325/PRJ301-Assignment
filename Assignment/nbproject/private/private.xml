@@ -3,8 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/web/schedule.jsp</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/model/Subject.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/controller/StudentLoginServlet.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/web/login.jsp</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/model/Instructor.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/controller/logout.java</file>
             <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/dal/SessionDAO.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/model/Session.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/dal/DBContext.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/model/Student.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/dal/StudentDAO.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/web/schedule.jsp</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/controller/ScheduleServlet.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/model/Attendance.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/web/list.jsp</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/controller/ListServlet.java</file>
+            <file>file:/C:/Users/DUC/Documents/GitHub/PRJ301-Assignment/Assignment/src/java/dal/AccDAO.java</file>
         </group>
     </open-files>
 </project-private>
