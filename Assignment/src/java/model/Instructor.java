@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * @author DUC
  */
 public class Instructor {
-    private int iid;
-    private String iname;
+    private int id;
+    private String name;
     private ArrayList<Session> sessions = new ArrayList<>();
     private ArrayList<Group> groups = new ArrayList<>();
 
@@ -20,26 +20,28 @@ public class Instructor {
     }
 
     public Instructor(int iid, String iname) {
-        this.iid = iid;
-        this.iname = iname;
+        this.id = iid;
+        this.name = iname;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 
-    public int getIid() {
-        return iid;
-    }
-
-    public void setIid(int iid) {
-        this.iid = iid;
-    }
-
-    public String getIname() {
-        return iname;
-    }
-
-    public void setIname(String iname) {
-        this.iname = iname;
-    }
+    
 
     public ArrayList<Session> getSessions() {
         return sessions;

@@ -18,7 +18,7 @@ public class Student {
     private String code;
     private boolean gender;
     private Date dob;
-    private ArrayList<Group> groups = new ArrayList<>();
+    
 
     public Student() {
     }
@@ -71,12 +71,6 @@ public class Student {
         this.dob = dob;
     }
 
-    public ArrayList<Group> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(ArrayList<Group> groups) {
-        this.groups = groups;
-    }
+   
     
 }

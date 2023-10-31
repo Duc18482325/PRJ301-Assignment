@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Account;
+import model.Instructor;
 import model.Student;
 
 /**
@@ -54,18 +55,24 @@ public class StudentLoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String student_user = request.getParameter("student_user");
-        String student_pass = request.getParameter("student_pass");
+        String user = request.getParameter("student_user");
+        String pass = request.getParameter("student_pass");
         String op = request.getParameter("op");
         HttpSession session = request.getSession();
           //session.setAttribute("op", op);
         AccDAO acc = new AccDAO();
-        Account a = acc.checkAcc(student_user, student_pass);
+        Account a = acc.checkAcc(user, pass);
         if (a!=null){
-          
-           session.setAttribute("acc", a);
-           Student st = acc.getAcc(student_user);
+          if (a.getRole()!=3){
+                session.setAttribute("acc", a);
+             Student st = acc.getAcc(user);
            session.setAttribute("info", st);
+          }
+          if (a.getRole()==3){
+              session.setAttribute("acc", a);
+              Instructor st = acc.getAccIns(user);
+           session.setAttribute("info", st);
+          }
          
             
             request.getRequestDispatcher("server.jsp").forward(request, response);

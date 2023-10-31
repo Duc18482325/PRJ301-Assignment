@@ -65,7 +65,7 @@ public class logout extends HttpServlet {
        // session.removeAttribute("op");
             response.sendRedirect("loginParents.jsp");
         }
-        if (acc.getRole()==2){
+        if (acc.getRole()!=1){
             session.removeAttribute("acc");
         session.removeAttribute("info");
                //   session.removeAttribute("op");

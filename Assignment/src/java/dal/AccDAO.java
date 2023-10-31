@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Account;
+import model.Instructor;
 import model.Student;
 
 /**
@@ -55,5 +56,26 @@ public class AccDAO extends DBContext {
         }
         return null;
     }
+    
+    public Instructor getAccIns(String user) {
+        String sql = "select*from Instructor i join Account a on i.code = a.code where [user] = ?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1, user);
 
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                Instructor i = new Instructor(rs.getInt("iid"), rs.getString("iname"));
+                return i;
+            }
+
+        } catch (SQLException e) {
+
+        }
+        return null;
+    }
+    public static void main(String[] args) {
+        Instructor i = new AccDAO().getAccIns("sa@a");
+      //  System.out.println(i.getIid());
+    }
 }

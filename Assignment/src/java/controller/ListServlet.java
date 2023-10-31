@@ -5,6 +5,7 @@
 
 package controller;
 
+import dal.SessionDAO;
 import dal.StudentDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +13,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
+import model.Group;
 import model.Student;
 
 /**
@@ -31,8 +35,22 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        StudentDAO s = new StudentDAO();
-        List<Student> list = s.getAll();
+        ArrayList<Group> l = new SessionDAO().getGroup();
+        HttpSession ses = request.getSession();
+        Student t = (Student) ses.getAttribute("info");
+        int id = t.getId();
+        ArrayList<Integer> index = new StudentDAO().getGroupByStu(id);
+        
+        ArrayList<Group> list = new ArrayList<>();
+        for (int i =0;i<l.size();i++){
+            for (int j = 0;j<index.size();j++){
+                if (index.get(j) == l.get(i).getGid()){
+                    list.add(l.get(i));
+                    continue;
+                }
+            }
+        }
+        
         request.setAttribute("data", list);
         request.getRequestDispatcher("list.jsp").forward(request, response);
     } 
