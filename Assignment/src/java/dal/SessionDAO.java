@@ -83,10 +83,10 @@ public class SessionDAO extends DBContext {
                     + "                     INNER JOIN [room] r ON r.roomid = s.rid\n"
                     + "                     INNER JOIN [TimeSlot] t ON t.tid = s.tid\n"
                     + "                     INNER JOIN [Subject] su ON su.subid = s.subid\n"
-                    + "		 join Attendance a on a.seid = s.seid\n"
-                    + "					 join Group_Student gs on gs.gid =g.gid\n"
-                    + "					 join Student st on st.stuid = gs.stuid\n"
-                    + "					 where st.stuid = ? "
+                    + "	 INNER JOIN Attendance a ON a.seid = s.seid\n"
+                    + "	 INNER JOIN Group_Student gs ON gs.gid =g.gid\n"
+                    + "	 INNER JOIN Student st ON st.stuid = gs.stuid\n"
+                    + "	 WHERE st.stuid = ? "
                     + "and s.[date] >=? AND s.[date] <= ?";
 
             PreparedStatement st = connection.prepareStatement(sql);
@@ -229,7 +229,9 @@ public class SessionDAO extends DBContext {
     // getroom
     public ArrayList<Group> getGroup() {
 
-        String com1 = " select gid,gname,iid,iname,s.subid,subname from [Group] g join Instructor i on g.sup_iid = i.iid join Subject s on g.subid = s.subid";
+        String com1 = "SELECT gid,gname,iid,iname,s.subid,subname FROM [Group] g "
+                + "INNER JOIN Instructor i ON g.sup_iid = i.iid"
+                + "INNER JOIN Subject s ON g.subid = s.subid";
         ArrayList<Group> lr = new ArrayList<>();
         try {
             PreparedStatement st = connection.prepareStatement(com1);
@@ -262,8 +264,9 @@ public class SessionDAO extends DBContext {
 
     public ArrayList<Student> getStudentByGroup(int id) {
         ArrayList<Student> stu = new ArrayList<>();
-        String com2 = "select s.stuid,stuname,code,gender,dob from Student s join Group_Student gs on s.stuid = gs.stuid\n"
-                + "where gid = ?";
+        String com2 = "SELECT s.stuid,stuname,code,gender,dob FROM Student s"
+                + "INNER JOIN Group_Student gs ON s.stuid = gs.stuid\n"
+                + "WHERE gid = ?";
         try {
             PreparedStatement st = connection.prepareStatement(com2);
             st.setInt(1, id);

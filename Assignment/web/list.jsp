@@ -29,9 +29,11 @@
     <center>
         <h1 style="color: blue; text-decoration: none;" >List of class</h1>
     </center>
+
     <c:forEach items="${requestScope.data}" var="g">
-        <h1>${g.name}</h1>
-        <table border="1px">
+
+        <h1 style="color: greenyellow">Class: ${g.name}</h1>
+        <table border="1px" width="40%">
             <tr>
                 <th>Student ID</th>
                 <th>Student Name</th>
@@ -50,8 +52,23 @@
                 </tr>
 
             </c:forEach>
-
         </table>
     </c:forEach>
+    <div style="margin-top: 50px;">
+        <div style="margin-left: 300px;">
+            <p>Mọi góp ý, thắc mắc xin liên hệ: Phòng dịch vụ sinh viên: Email: dichvusinhvien@fe.edu.vn. Điện thoại: (024)7308.13.13</p>   
+        </div>
+        <div style="display: flex;
+             justify-content: center;
+             margin-top: 30px;">
+            Prowered by 
+            <a href="http://fpt.edu.vn/" style="margin: 0 0px 0 5px;
+               text-decoration: none;">FPT University |</a>
+            <a href="http://cms.fpt.edu.vn/" style="margin: 0 0px 0 5px;
+               text-decoration: none;">CMS |</a>
+            <a href="http://library.fpt.edu.vn/" style="margin: 0 0px 0 5px;
+               text-decoration: none;">Library |</a>
+        </div>
+    </div>
 </body>
 </html>
