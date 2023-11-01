@@ -20,7 +20,7 @@ public class TimeSlotDAO extends DBContext {
     public ArrayList<TimeSlot> list(){
         ArrayList<TimeSlot> slots = new ArrayList<>();
         try {
-            String sql = "select tid, description from TimeSlot";
+            String sql = "SELECT tid, description FROM TimeSlot";
             PreparedStatement st = connection.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while(rs.next()){

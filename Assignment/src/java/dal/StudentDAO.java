@@ -19,7 +19,7 @@ public class StudentDAO extends DBContext {
 
     public ArrayList<Student> getAll() {
         ArrayList<Student> list = new ArrayList<>();
-        String sql = "select ID, name, code, gender, dob from Student";
+        String sql = "SELECT ID, name, code, gender, dob FROM Student";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
@@ -35,8 +35,10 @@ public class StudentDAO extends DBContext {
     }
 
     public ArrayList<Integer> getGroupByStu(int id) {
-        String sql = "select g.gid from Student s join Group_Student gs on s.stuid = gs.stuid\n"
-                + "join [Group] g on g.gid = gs.gid where s.stuid =  ?";
+        String sql = "SELECT g.gid FROM Student s"
+                + "INNER JOIN Group_Student gs ON s.stuid = gs.stuid\n"
+                + "INNER JOIN [Group] g ON g.gid = gs.gid "
+                + "WHERE s.stuid =  ?";
         ArrayList<Integer> l = new ArrayList<>();
         try{
             PreparedStatement st = connection.prepareStatement(sql);

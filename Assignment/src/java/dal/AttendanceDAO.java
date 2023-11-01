@@ -23,7 +23,7 @@ public class AttendanceDAO extends DBContext {
     public ArrayList<Attendance> getAttendance(int seid) {
         ArrayList<Attendance> attlist = new ArrayList<>();
         try {
-            String sql = "select s.stuid as id, s.stuname as name, ISNULL(a.status, 0) as sta, ISNULL(a.description, '') as des, ISNULL(a.att_datetime, GETDATE()) as att, a.seid from [Session] se \n" +
+            String sql = "SELECT s.stuid as id, s.stuname as name, ISNULL(a.status, 0) as sta, ISNULL(a.description, '') as des, ISNULL(a.att_datetime, GETDATE()) as att, a.seid FROM [Session] se \n" +
 "                     INNER JOIN [group] g ON se.gid = g.gid \n" +
 "                     INNER JOIN [Group_Student] gst ON gst.gid = g.gid \n" +
 "                     INNER JOIN [Student] s ON s.stuid = gst.stuid \n" +

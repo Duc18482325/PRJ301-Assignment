@@ -18,7 +18,8 @@ import model.Student;
 public class AccDAO extends DBContext {
 
     public Account checkAcc(String user, String pass) {
-        String sql = "select * from Account where [user]=? and [pass]=?";
+        String sql = "SELECT * FROM Account"
+                + "WHERE [user]=? and [pass]=?";
 
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -39,8 +40,9 @@ public class AccDAO extends DBContext {
     }
 
     public Student getAcc(String user) {
-        String sql = "select*from Student s join Account a on s.code = a.code \n"
-                + "where [user] = ?";
+        String sql = "SELECT * FROM Student s"
+                + "INNER JOIN Account a on s.code = a.code \n"
+                + "WHERE [user] = ?";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, user);
@@ -56,9 +58,11 @@ public class AccDAO extends DBContext {
         }
         return null;
     }
-    
+
     public Instructor getAccIns(String user) {
-        String sql = "select*from Instructor i join Account a on i.code = a.code where [user] = ?";
+        String sql = "SELECT * FROM Instructor i"
+                + "INNER JOIN Account a on i.code = a.code"
+                + "WHERE [user] = ?";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, user);
@@ -74,8 +78,9 @@ public class AccDAO extends DBContext {
         }
         return null;
     }
+
     public static void main(String[] args) {
         Instructor i = new AccDAO().getAccIns("sa@a");
-      //  System.out.println(i.getIid());
+        //  System.out.println(i.getIid());
     }
 }
